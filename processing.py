@@ -2,7 +2,7 @@ import pandas as pd
 import re
 import math
 import datetime
-import dash_html_components as html
+from dash import html
 
 def ret_dict_awards(row):
     id=row['book_id']

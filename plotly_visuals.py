@@ -4,8 +4,7 @@ import numpy as np
 ### Plotly libraries
 from plotly.subplots import make_subplots
 import plotly.graph_objs as go
-import dash_core_components as dcc
-import dash_bootstrap_components as dbc
+from dash import dcc, html
 
 from processing import chart_data, ret_string
 

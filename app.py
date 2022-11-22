@@ -8,9 +8,7 @@ import os
 import json
 
 ### Dash dependencies
-import dash 
-import dash_core_components as dcc
-import dash_html_components as html
+from dash import Dash, dcc, html
 from dash.dependencies import Input, Output
 
 import dash_bootstrap_components as dbc
@@ -27,10 +25,10 @@ from plotly_visuals import  ret_timeline
 #### Initialize Dash app
 #####################################################################################
 
-    app = dash.Dash(__name__,
-        title="Good Reads",
-        external_stylesheets=[dbc.themes.SOLAR]
-    )
+app = Dash(__name__,
+    title="Good Reads",
+    external_stylesheets=[dbc.themes.SOLAR]
+)
 
 #####################################################################################
 #### Load data
@@ -224,4 +222,4 @@ def on_button_click(n,clickData):
 #####################################################################################
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server(debug=False)
