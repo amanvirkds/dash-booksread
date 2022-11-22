@@ -1,0 +1,45 @@
+body {
+    font-family: arial;
+    color: #082c42;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: arial;
+    color: #add4ed;
+}
+
+.glass-back {
+    background-color: #0c283b;
+    opacity: 0.8;
+    border-radius: 25px;
+    padding: 20px;
+}
+
+.glass-backdark {
+    background-color: #0c283b;
+    opacity: 0.9;
+    border-radius: 25px;
+    padding: 20px;
+}
+
+body {
+    background-image: url("/assets/images/back.jpeg");
+    background-repeat: no-repeat;
+    background-color: #cccccc;
+    background-attachment: fixed;
+    background-position: center top;
+  }
+
+.container-top {
+    position: fixed;
+    margin-top: 10px;
+}
+
+.container-page {
+    position: relative;
+    top: 390px;
+}
+
+.main-container {
+    position: relative;
+    top: 10px;
+}
