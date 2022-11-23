@@ -25,10 +25,11 @@ from plotly_visuals import  ret_timeline
 #### Initialize Dash app
 #####################################################################################
 
-app = Dash(__name__,
+dash_app = Dash(__name__,
     title="Good Reads",
     external_stylesheets=[dbc.themes.SOLAR]
 )
+application = dash_app.server
 
 #####################################################################################
 #### Load data
@@ -95,7 +96,7 @@ dropdown_sel=dcc.Dropdown(
 #### Dash Application Layout
 #####################################################################################
 
-app.layout=dbc.Container([
+dash_app.layout=dbc.Container([
     dbc.Row([
         dbc.Container([
             dbc.Row([
@@ -185,7 +186,7 @@ app.layout=dbc.Container([
 #### Application Call back functions
 #####################################################################################
 
-@app.callback(
+@dash_app.callback(
     Output('book-graph', 'figure'),
     Input('groupby-column', 'value'),
     Input('sort-column', 'value'),
@@ -199,7 +200,7 @@ def update_graph(groupby_column, sort_column,sel_rows):
 
     return fig
 
-@app.callback(
+@dash_app.callback(
     Output('book-title','children'),
     Output('hover-plot', 'children'), 
     Output('clear-button', 'n_clicks'), 
@@ -222,4 +223,4 @@ def on_button_click(n,clickData):
 #####################################################################################
 
 if __name__ == '__main__':
-    app.run_server(debug=False)
+    application.run(debug=True, host='0.0.0.0', port='80')
